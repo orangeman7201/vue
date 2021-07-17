@@ -9,7 +9,7 @@
     <input type="radio" id="No1" value="いいえ" v-model="anserData.question1">
     <label for="No1">いいえ</label>
 
-    <span v-if='anserData.question1 != ""'>
+    <span v-if="anserData.question1 != ''">
     <p>現在入院中ですか？</p>
     <input type="radio" id="Yes2" value="はい" v-model="anserData.question2">
     <label for="Yes2">はい</label>
@@ -17,7 +17,7 @@
     <label for="No2">いいえ</label>
     </span>
 
-    <span v-if='anserData.question2 != ""'>
+    <span v-if="anserData.question2 != ''">
     <p>７日以上の入院はしたことありますか？</p>
     <input type="radio" id="Yes3" value="はい" v-model="anserData.question3">
     <label for="Yes3">はい</label>

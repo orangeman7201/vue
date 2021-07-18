@@ -39,39 +39,31 @@
 
 <script>
 export default {
-  data() {
-    return{
-      userData: {
-        sex: '',
-        birthyear: '',
-        birthmonth: '',
-      },
-    }
-  },
   computed: {
+    userData() {
+      return this.$store.state.userData;
+    },
     years: function() {
       let yearData = [];
-      for(let i = 1930; i < 2022; i++) {
-        yearData.push(i);
+      for(let year = 1930; year < 2022; year++) {
+        yearData.push(year);
       }
       return yearData;
     },
     months: function() {
       let monthData = [];
-      for(let j = 1; j < 13; j++) {
-        monthData.push(j);
+      for(let month = 1; month < 13; month++) {
+        monthData.push(month);
       }
       return monthData;
     },
     days: function() {
       let dayData = [];
-      for(let k = 1; k < 32; k++) {
-        dayData.push(k);
+      for(let day = 1; day < 32; day++) {
+        dayData.push(day);
       }
       return dayData;
     },
   }
 }
-
-
 </script>

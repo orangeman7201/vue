@@ -2,7 +2,7 @@
 
   <div style="padding: 20px;">
     <p>-ご相談内容-</p>
-    <textarea name="FreeFormat" id="FreeFormat" cols="150" rows="40" v-model="freeFormatData.freeFormat"></textarea>
+    <textarea name="FreeFormat" id="FreeFormat" cols="150" rows="40" v-model="getterFreeFormatData.freeFormat"></textarea>
 
     <nav>
       <router-link to="/Questions">もどる</router-link>
@@ -15,9 +15,9 @@
 <script>
 export default {
   computed: {
-    freeFormatData() {
-      return this.$store.state.freeFormatData;
-    }
+    getterFreeFormatData: function() {
+      return this.$store.getters.getterFreeFormatData;
+    },
   },
 };
 </script>

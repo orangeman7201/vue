@@ -1,29 +1,29 @@
 <template>
   <div style="padding: 20px;">
-
+    
     <p>-性別-</p>
     <form>
-      <input type="radio" id="man" value="男性" v-model="userData.sex">
+      <input type="radio" id="man" value="男性" v-model="getterUserData.sex">
       <label for="man">男性</label>
-      <input type="radio" id="woman" value="女性" v-model="userData.sex">
+      <input type="radio" id="woman" value="女性" v-model="getterUserData.sex">
       <label for="woman">女性</label>
     </form>
 
 
     <p>-生年月日-</p>
-    <select name="birthyear" id="birthyear" v-model="userData.birthyear">
+    <select name="birthyear" id="birthyear" v-model="getterUserData.birthyear">
       <option v-for="year in years" :key="year">
         {{ year }}年
       </option>
     </select>年
 
-    <select name="birthmonth" id="birthmonth" v-model="userData.birthmonth">
+    <select name="birthmonth" id="birthmonth" v-model="getterUserData.birthmonth">
       <option v-for="month in months" :key="month">
         {{ month }}
       </option>
     </select>月
 
-    <select name="birthday" id="birthday" v-model="userData.birthday">
+    <select name="birthday" id="birthday" v-model="getterUserData.birthday">
       <option v-for="day in days" :key="day">
         {{ day }}
       </option>
@@ -40,8 +40,8 @@
 <script>
 export default {
   computed: {
-    userData() {
-      return this.$store.state.userData;
+    getterUserData: function() {
+      return this.$store.getters.getterUserData;
     },
     years: function() {
       let yearData = [];

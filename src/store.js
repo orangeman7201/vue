@@ -5,18 +5,29 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    userData: {
+    stateUserData: {
       sex: "",
       birthyear: "",
       birthmonth: "",
     },
-    answerData: {
+    stateAnswerData: {
       question1: '',
       question2: '',
       question3: '',
     },
-    freeFormatData: {
+    stateFreeFormatData: {
       freeFormat: ''
+    },
+  },
+  getters: {
+    getterUserData: state => {
+      return state.stateUserData;
+    },
+    getterAnswerData: state => {
+      return state.stateAnswerData;
+    },
+    getterFreeFormatData: state => {
+      return state.stateFreeFormatData;
     },
   }
 })
